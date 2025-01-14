@@ -39,4 +39,4 @@ jobs:
       - name: do stuff
         run: |
           python parent.py
-          sleep 10
+          sleep 120
