@@ -24,7 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu-latest", "windows-latest"]
-        python-version: [3.12"]
+        python-version: ["3.12"]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Python ${{ matrix.python-version }}
