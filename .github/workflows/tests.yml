@@ -40,3 +40,4 @@ jobs:
         run: |
           python parent.py
           sleep 120
+          ls
