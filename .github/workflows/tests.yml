@@ -36,11 +36,23 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           
-      - name: do stuff
+      - name: install stuff
         run: |
           pip install hatch
           hatch build
           pip install dist/parent-1.0.0-py3-none-any.whl
+      
+      - name: run    
           parent
           sleep 120
           ls
+
+      - name: conditionnal
+        if: runner.os == 'Linux'
+        run: |
+          ls /opt/hostedtoolcache/Python/3.12.8/x64/bin
+
+      - name: conditionnal 2
+        if: runner.os != 'Linux'
+        run: |
+          ls C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts
