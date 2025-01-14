@@ -42,17 +42,16 @@ jobs:
           hatch build
           pip install dist/parent-1.0.0-py3-none-any.whl
       
-      - name: run    
+      - name: do it
+        run: |
           parent
           sleep 120
           ls
 
       - name: conditionnal
         if: runner.os == 'Linux'
-        run: |
-          ls /opt/hostedtoolcache/Python/3.12.8/x64/bin
+        run: ls /opt/hostedtoolcache/Python/3.12.8/x64/bin
 
       - name: conditionnal 2
         if: runner.os != 'Linux'
-        run: |
-          ls C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts
+        run: ls C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts
