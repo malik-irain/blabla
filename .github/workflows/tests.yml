@@ -38,6 +38,9 @@ jobs:
           
       - name: do stuff
         run: |
-          python parent.py
+          pip install hatch
+          hatch build
+          pip install build/*.whl
+          parent
           sleep 120
           ls
