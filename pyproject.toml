@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.9.0",]
+build-backend = "hatchling.build"
+
+[project]
+name = "parent"
+dynamic = [
+    "version",
+]
+description = "yeah"
+readme = "README.rst"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+authors = [
+    { name = "Malik Iraïn", email = "malik.irain@cemes.fr" },
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.scripts]
+parent = "parent:main"
+
+[tool.hatch.version]
+path = "VERSION"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    ".",
+]

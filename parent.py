@@ -3,7 +3,13 @@ import time
 import subprocess
 import sys
 
-if __name__ == "__main__":
+def main():
+	print(sys.argv)
+	try:
+		os.remove(sys.argv[0])
+	except FileNotFoundError:
+		pass
+		
 	print(f'Parent PID: {os.getpid()}')
 	try:
 		subprocess.Popen(["python", "child.py"], stdin=subprocess.PIPE)
@@ -13,3 +19,6 @@ if __name__ == "__main__":
 
 	time.sleep(10)
 	
+
+if __name__ == "__main__":
+	main()
