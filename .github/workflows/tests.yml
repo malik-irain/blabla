@@ -53,8 +53,8 @@ jobs:
         if: runner.os != 'Linux'
         run: |
           ls C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts      
-          cat C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts\\parent
-          
+          cat C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts\\parent.exe
+
       - name: do it
         run: |
           parent
