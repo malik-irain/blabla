@@ -59,8 +59,12 @@ jobs:
 
       - name: conditionnal
         if: runner.os == 'Linux'
-        run: ls /opt/hostedtoolcache/Python/3.12.8/x64/bin
+        run: |
+          ls /opt/hostedtoolcache/Python/3.12.8/x64/bin
+          cat /opt/hostedtoolcache/Python/3.12.8/x64/bin/parent
 
       - name: conditionnal 2
         if: runner.os != 'Linux'
-        run: ls C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts
+        run: |
+          ls C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts
+          cat C:\\hostedtoolcache\\windows\\Python\\3.12.8\\x64\\Scripts\\parent
